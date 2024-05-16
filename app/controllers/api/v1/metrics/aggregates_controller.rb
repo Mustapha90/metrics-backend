@@ -37,7 +37,7 @@ module Api
               prev_page: metrics.prev_page,
               total_count: metrics.total_count
             },
-            data: metrics.as_json(only: [:timestamp, :avg_value, :max_value, :min_value])
+            data: metrics.as_json(methods: :timestamp, only: [:timestamp, :avg_value, :max_value, :min_value])
           }
         end
       end

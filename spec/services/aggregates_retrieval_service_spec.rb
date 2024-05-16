@@ -11,6 +11,7 @@ RSpec.describe AggregatesRetrievalService do
 
         expect(result.size).to eq(2)
         expect(result.first).to be_a(MetricsAggs1m)
+        expect(result.first).to respond_to(:timestamp)
       end
 
       it 'returns paginated results for 1h frequency' do
@@ -19,6 +20,7 @@ RSpec.describe AggregatesRetrievalService do
 
         expect(result.size).to eq(2)
         expect(result.first).to be_a(MetricsAggs1h)
+        expect(result.first).to respond_to(:timestamp)
       end
 
       it 'returns paginated results for 1d frequency' do
@@ -27,6 +29,7 @@ RSpec.describe AggregatesRetrievalService do
 
         expect(result.size).to eq(2)
         expect(result.first).to be_a(MetricsAggs1d)
+        expect(result.first).to respond_to(:timestamp)
       end
     end
 

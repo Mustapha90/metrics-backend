@@ -3,6 +3,10 @@ class MetricsAggs1h < ActiveRecord::Base
   belongs_to :metric_type
 
   def readonly?
-   true
+    true
+  end
+
+  def timestamp
+    self[:bucket]
   end
 end
