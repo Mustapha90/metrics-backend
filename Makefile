@@ -15,24 +15,27 @@ clean:
 restart: down up
 
 migrate:
-	docker-compose run --rm api rails db:migrate
+	docker-compose run --rm api bundle exec rails db:migrate
 
 create-db:
-	docker-compose run --rm api rails db:create
+	docker-compose run --rm api bundle exec rails db:create
 
 drop-db:
-	docker-compose run --rm api rails db:drop
+	docker-compose run --rm api bundle exec rails db:drop
 
 seed:
-	docker-compose run --rm api rails db:seed
+	docker-compose run --rm api bundle exec rails db:seed
+
+shell:
+	docker-compose exec -it api bash
 
 console:
-	docker-compose run --rm api rails console
+	docker-compose run --rm api bundle exec rails console
 
 test:
-	docker-compose run --rm api rails test
+	RAILS_ENV=test docker-compose run --rm api bundle exec rspec
 
 logs:
 	docker-compose logs -f
 
-.PHONY: up build down clean restart migrate create-db drop-db seed console test logs
+.PHONY: up build down clean restart migrate create-db drop-db seed shell console test logs

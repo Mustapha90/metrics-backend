@@ -4,17 +4,25 @@ services:
     image: timescale/timescaledb:latest-pg14
     volumes:
       - postgres_data:/var/lib/postgresql/data
-    env_file: .env
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
   api:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
+      - bundle_data:/usr/local/bundle
       - .:/app
     ports:
       - "3000:3000"
-    env_file: .env
+    environment:
+      - RAILS_ENV=${RAILS_ENV:-development}
     depends_on:
       - db
+    tty: true
+    stdin_open: true
+
 volumes:
   postgres_data:
+  bundle_data:
