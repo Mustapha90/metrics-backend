@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class MetricType < ApplicationRecord
   has_many :metrics_aggs_1m
   has_many :metrics_aggs_1h

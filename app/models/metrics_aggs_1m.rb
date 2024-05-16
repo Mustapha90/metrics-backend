@@ -1,4 +1,6 @@
-class MetricsAggs1m < ActiveRecord::Base
+# frozen_string_literal: true
+
+class MetricsAggs1m < ApplicationRecord
   self.table_name = 'metrics_aggs_1m'
   belongs_to :metric_type
 

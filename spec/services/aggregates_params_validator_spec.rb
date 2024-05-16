@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe AggregatesParamsValidator, type: :model do
@@ -29,7 +31,7 @@ RSpec.describe AggregatesParamsValidator, type: :model do
       it 'has an appropriate error message' do
         validator = AggregatesParamsValidator.new(invalid_metric_type_params)
         validator.valid?
-        expect(validator.errors).to include({ message: "Metric type not found" })
+        expect(validator.errors).to include({ message: 'Metric type not found' })
       end
     end
 
@@ -42,7 +44,7 @@ RSpec.describe AggregatesParamsValidator, type: :model do
       it 'has an appropriate error message' do
         validator = AggregatesParamsValidator.new(invalid_frequency_params)
         validator.valid?
-        expect(validator.errors).to include({ message: "Invalid frequency specified" })
+        expect(validator.errors).to include({ message: 'Invalid frequency specified' })
       end
     end
   end

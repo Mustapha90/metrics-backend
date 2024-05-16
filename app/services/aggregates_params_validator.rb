@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 class AggregatesParamsValidator
   attr_reader :errors
 
-  FREQUENCIES = ['1m', '1h', '1d'].freeze
+  FREQUENCIES = %w[1m 1h 1d].freeze
 
   def initialize(params)
     @metric_type_code = params[:metric_type]
@@ -18,14 +20,14 @@ class AggregatesParamsValidator
   private
 
   def validate_metric_type
-    unless MetricType.exists?(code: @metric_type_code)
-      @errors << { message: "Metric type not found" }
-    end
+    return if MetricType.exists?(code: @metric_type_code)
+
+    @errors << { message: 'Metric type not found' }
   end
 
   def validate_frequency
-    unless FREQUENCIES.include?(@frequency)
-      @errors << { message: "Invalid frequency specified" }
-    end
+    return if FREQUENCIES.include?(@frequency)
+
+    @errors << { message: 'Invalid frequency specified' }
   end
 end

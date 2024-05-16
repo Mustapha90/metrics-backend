@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Metric < ApplicationRecord
   belongs_to :metric_type
   acts_as_hypertable time_column: :timestamp
