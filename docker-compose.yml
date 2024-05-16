@@ -4,7 +4,7 @@ services:
   db:
     image: timescale/timescaledb:latest-pg14
     volumes:
-      - ../pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
@@ -31,7 +31,7 @@ services:
         condition: service_healthy
     tty: true
     stdin_open: true
-    command: bash -c "bundle exec rake db:create db:migrate db:seed && bin/rails server -b 0.0.0.0 --pid=/tmp/server.pid"
 
 volumes:
   bundle_data:
+  pgdata:

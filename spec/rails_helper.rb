@@ -1,4 +1,6 @@
-require "shoulda/matchers"
+# frozen_string_literal: true
+
+require 'shoulda/matchers'
 
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -22,7 +24,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
-  config.filter_gems_from_backtrace("gem name")
+  config.filter_gems_from_backtrace('gem name')
 
   config.include FactoryBot::Syntax::Methods
 end

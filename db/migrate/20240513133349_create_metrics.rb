@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateMetrics < ActiveRecord::Migration[7.1]
   def change
     hypertable_options = {
@@ -14,6 +16,6 @@ class CreateMetrics < ActiveRecord::Migration[7.1]
       t.timestamps
     end
 
-    add_index :metrics, [:metric_type_id, :timestamp], name: 'index_metrics_on_type_and_timestamp'
+    add_index :metrics, %i[metric_type_id timestamp], name: 'index_metrics_on_type_and_timestamp'
   end
 end

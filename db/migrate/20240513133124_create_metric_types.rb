@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateMetricTypes < ActiveRecord::Migration[7.1]
   def change
     create_table :metric_types do |t|
