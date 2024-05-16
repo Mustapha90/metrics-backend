@@ -1,0 +1,32 @@
+---
+openapi: 3.0.1
+info:
+  title: API V1
+  version: v1
+paths:
+  "/api/v1/metrics/aggs/{metric_type}/{frequency}":
+    parameters:
+    - name: metric_type
+      in: path
+      description: Metric type
+      required: true
+      schema:
+        type: string
+    - name: frequency
+      in: path
+      description: Frequency
+      required: true
+      schema:
+        type: string
+    get:
+      summary: show aggregates
+      responses:
+        '200':
+          description: successful
+        '400':
+          description: invalid parameters
+servers:
+- url: http://localhost
+  variables:
+    defaultHost:
+      default: localhost:3000/
