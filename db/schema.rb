@@ -36,7 +36,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_16_001527) do
   end
 
   add_foreign_key "metrics", "metric_types"
-  create_hypertable "metrics", time_column: "timestamp", chunk_time_interval: "1 day", compress_segmentby: "metric_type_id", compress_orderby: "created_at ASC, timestamp DESC", compression_interval: "P7D"
+  create_hypertable "metrics", time_column: "timestamp", chunk_time_interval: "1 day", compress_segmentby: "metric_type_id", compress_orderby: "created_at ASC, timestamp DESC", compression_interval: "P3M"
   create_continuous_aggregate("metrics_aggs_1m", <<-SQL, refresh_policies: { start_offset: "INTERVAL 'P1M'", end_offset: "INTERVAL 'PT1M'", schedule_interval: "INTERVAL '60'"}, materialized_only: true, finalized: true)
     SELECT metrics.metric_type_id,
       time_bucket('PT1M'::interval, metrics."timestamp") AS bucket,

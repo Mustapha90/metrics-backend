@@ -4,7 +4,7 @@ class CreateMetrics < ActiveRecord::Migration[7.1]
       time_column: 'timestamp',
       chunk_time_interval: '1 day',
       compress_segmentby: 'metric_type_id',
-      compression_interval: '7 days'
+      compression_interval: '3 month'
     }
 
     create_table :metrics, id: false, hypertable: hypertable_options do |t|
