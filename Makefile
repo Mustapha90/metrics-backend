@@ -41,4 +41,6 @@ logs:
 swag:
 	docker-compose run --rm -e SWAGGER_DRY_RUN=0 api bundle exec rake rswag:specs:swaggerize
 
-.PHONY: up build down clean restart migrate create-db drop-db seed shell console test logs
+install: build create-db migrate seed
+
+.PHONY: up build down clean restart migrate create-db drop-db seed shell console test logs install
