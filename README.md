@@ -66,7 +66,9 @@ Rswag provides interactive API documentation available at:
 
 [http://localhost:3000/api-docs](http://localhost:3000/api-docs)
 
-### Example Endpoint
+![Untitled1](https://github.com/Mustapha90/metrics-backend/assets/18019846/25ad1778-f369-4870-9016-884a5f9128af)
+
+### Metrics endpoint
 
 The application provides a paginated metrics aggregation endpoint. Example usage:
 
