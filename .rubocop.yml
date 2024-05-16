@@ -71,3 +71,22 @@ Metrics/BlockLength:
 Rails/FilePath:
   Exclude:
     - 'spec/rails_helper.rb'
+
+Metrics/MethodLength:
+  Max: 21
+
+Rails/HasManyOrHasOneDependent:
+  Enabled: false
+
+Rails/UniqueValidationWithoutIndex:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 103
+
+Rails/SkipsModelValidations:
+  Enabled: false
+
+Layout/LineLength:
+  Max: 121
+  Enabled: true
