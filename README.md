@@ -3,6 +3,9 @@
 
 This Rails API application is designed to serve metrics, leveraging TimescaleDB for time-series data storage. Allowing fast retrieval for aggragated calculations on base metrics data, supporting several metric types.
 
+# Implementation walkthrough
+For full details about the implementation process, and decisions taken, please check it out here: [Implementation walkthrough](https://github.com/Mustapha90/metrics-backend/blob/main/implementation_details.md)
+
 ## Tools used
 
 - **TimescaleDB**: Efficient storage and querying of time-series data.
