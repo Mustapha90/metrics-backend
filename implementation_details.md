@@ -84,7 +84,8 @@ Provides powerful and flexible charting capabilities.
 While the current setup with materialized views in TimescaleDB efficiently handles aggregations, managing changes to these views can become complex, especially as the application evolves and new requirements emerge.
 
 **Proposed Solution**: 
-Integrate the [Scenic](https://github.com/scenic-views/scenic) gem to manage database views.
+Integrate the timescaledb gem [Scenic](https://github.com/scenic-views/scenic) gem to manage database views with ease.
+I aleady reached out to the team of timescaledb gem and they provided a guide on how to do it here: [timescaledb + scenic](https://github.com/jonatas/timescaledb/issues/65)
 
 **Benefits**:
 1. **Versioning**: Scenic allows versioning of views, making it easier to track changes over time and rollback if necessary.
