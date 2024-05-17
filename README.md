@@ -121,4 +121,4 @@ Error response example:
 
 - **CORS**: Cross-Origin Resource Sharing (CORS) is configured.
 - **Port**: The application is configured to start on port 3000.
-- The endpoint documentation is missing response examples because of some configuration issue, please check the readme for now!
+- The endpoint documentation is missing response examples because of some configuration issue with rswag, please check the readme for now!
